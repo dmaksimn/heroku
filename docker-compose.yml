@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  demo:
+    image: security-demo
+    ports:
+      - "8080:8080"
+    container_name: demo
+    environment:
+      - "SPRING_PROFILES_ACTIVE=docker-dev"
+  db:
+    image: postgres
+    ports:
+      - "5433:5432"
+    container_name: db
+    environment:
+      POSTGRES_PASSWORD: postgres

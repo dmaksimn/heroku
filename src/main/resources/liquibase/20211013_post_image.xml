@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="kluki (generated)" id="1634153439584-1">
+        <createTable tableName="post_image">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="post_imagePK"/>
+            </column>
+            <column name="image_name" type="VARCHAR(255)"/>
+            <column name="post_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="kluki (generated)" id="1634153439584-2">
+        <addForeignKeyConstraint baseColumnNames="post_id" baseTableName="post_image" constraintName="FKsip7qv57jw2fw50g97t16nrjr" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="post" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
